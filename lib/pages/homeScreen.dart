@@ -60,25 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 showImage: true,
                 content:
                     const Text("Some quick example text to build on the card"),
-                // buttonBar: GFButtonBar(
-                //   children: <Widget>[
-                //     GFButton(
-                //       onPressed: () {
-                //         Navigator.push(
-                //             context,
-                //             MaterialPageRoute(
-                //                 builder: (_) => const AboutScreen(
-                //                       title: 'About',
-                //                     )));
-                //       },
-                //       text: 'Buy',
-                //     ),
-                //     GFButton(
-                //       onPressed: () {},
-                //       text: 'Cancel',
-                //     ),
-                //   ],
-                // ),
               ),
             ),
           ],

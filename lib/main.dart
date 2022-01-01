@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_app/pages/aboutScreen.dart';
+import 'package:my_app/pages/listingScreen.dart';
 import 'pages/homeScreen.dart';
 
 void main() {
@@ -39,7 +40,9 @@ class _HomeState extends State {
     const AboutScreen(
       title: 'About Screen 1',
     ),
-    const AboutScreen(title: 'About Screen 2'),
+    Container(
+      child: ListingScreen(),
+    )
   ];
 
   @override
