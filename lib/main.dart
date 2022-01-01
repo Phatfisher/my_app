@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_app/pages/aboutScreen.dart';
-
 import 'pages/homeScreen.dart';
 
 void main() {
