@@ -1,6 +1,6 @@
 # my_app
 
-A new Flutter project.
+Testing and creating a basic Flutter app. 
 
 ## Getting Started
 
