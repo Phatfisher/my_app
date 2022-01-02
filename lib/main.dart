@@ -3,8 +3,14 @@ import 'package:getwidget/getwidget.dart';
 import 'package:my_app/pages/aboutScreen.dart';
 import 'package:my_app/pages/listingScreen.dart';
 import 'pages/homeScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -40,9 +46,7 @@ class _HomeState extends State {
     const AboutScreen(
       title: 'About Screen 1',
     ),
-    Container(
-      child: ListingScreen(),
-    )
+    ListingScreen(),
   ];
 
   @override
