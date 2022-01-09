@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'about_screen.dart';
 import 'home_screen.dart';
 import 'listing_screen.dart';
@@ -50,31 +51,22 @@ class _HomeState extends State {
             ListTile(
               title: const Text('Home'),
               onTap: () {
-                // Update the state of the app
-                // ...
                 onTabTapped(0);
-                // Then close the drawer
-                Navigator.pop(context);
+                Get.back();
               },
             ),
             ListTile(
               title: const Text('Map'),
               onTap: () {
-                // Update the state of the app
-
                 onTabTapped(1);
-                // Then close the drawer
-                Navigator.pop(context);
+                Get.back();
               },
             ),
             ListTile(
               title: const Text('Account'),
               onTap: () {
-                // Update the state of the app
-                // ...
                 onTabTapped(2);
-                // Then close the drawer
-                Navigator.pop(context);
+                Get.back();
               },
             ),
           ],
