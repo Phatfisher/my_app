@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
+import 'package:get/get.dart';
 import 'package:my_app/models/flutterfire.dart';
+import 'package:my_app/pages/home_landing_page.dart';
 
 class Authentication extends StatefulWidget {
   const Authentication({Key? key}) : super(key: key);
@@ -57,12 +58,13 @@ class _AuthenticationState extends State<Authentication> {
                     await register(_emailField.text, _passwordField.text);
 
                 if (shouldNavigate) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Get.to(Home());
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => Home(),
+                  //   ),
+                  // );
                 }
               },
               child: const Text("Register"),
@@ -81,12 +83,13 @@ class _AuthenticationState extends State<Authentication> {
                     await signIn(_emailField.text, _passwordField.text);
 
                 if (shouldNavigate) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  Get.to(Home());
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => Home(),
+                  //   ),
+                  // );
                 }
               },
               child: const Text("Login"),

@@ -1,6 +1,6 @@
 # my_app
 
-Testing and creating a basic Flutter app. 
+Testing and creating a basic Flutter app. This project serves in learning Flutter and testing various concepts. 
 
 ## Getting Started
 

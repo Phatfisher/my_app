@@ -41,6 +41,8 @@ dependencies:
   firebase_analytics: ^9.0.4
   rename: ^2.0.1
   google_sign_in: ^5.2.1
+  cloud_firestore: ^3.1.6
+  get: ^4.6.1
 
 dev_dependencies:
   flutter_test:

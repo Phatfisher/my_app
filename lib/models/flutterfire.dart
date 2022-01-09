@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
 Future<bool> signIn(String email, String password) async {
   try {
@@ -31,4 +32,8 @@ Future<bool> register(String email, String password) async {
     print(e);
     return false;
   }
+}
+
+logCurrentScreen(String screen) {
+  FirebaseAnalytics.instance.logScreenView(screenName: screen);
 }
