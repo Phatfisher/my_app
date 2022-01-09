@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:my_app/pages/aboutScreen.dart';
+import 'package:my_app/pages/authentication.dart';
 import 'package:my_app/pages/listingScreen.dart';
 import 'pages/homeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,24 +19,38 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  static FirebaseAnalyticsObserver observer =
+      FirebaseAnalyticsObserver(analytics: analytics);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
-
     return MaterialApp(
       title: 'Flutter Demo',
-      navigatorObservers: [FirebaseAnalyticsObserver(analytics: _analytics)],
+      navigatorObservers: <NavigatorObserver>[observer],
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      // home: Home(
+      //   analytics: analytics,
+      //   observer: observer,
+      // ),
+      home: Authentication(),
     );
   }
 }
 
 class Home extends StatefulWidget {
+  // Home({
+  //   Key? key,
+  //   required this.analytics,
+  //   required this.observer,
+  // }) : super(key: key);
+
+  //final FirebaseAnalytics analytics;
+  //final FirebaseAnalyticsObserver observer;
+
   @override
   State createState() {
     return _HomeState();
