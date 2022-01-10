@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:my_app/constants/controllers.dart';
 import 'package:my_app/controllers/counter_controller.dart';
 import 'package:my_app/pages/products.dart';
 
@@ -73,14 +74,24 @@ class MyHomePage extends StatelessWidget {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProductsView(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ProductsView(),
+                //   ),
+                // );
+                Get.to(ProductsView());
               },
               child: Text('Products Listing'),
+            ),
+            TextButton(
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              ),
+              onPressed: () {
+                authController.signOut();
+              },
+              child: Text('Sign Out'),
             ),
           ],
         ),

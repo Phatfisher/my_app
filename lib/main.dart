@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:my_app/constants/firebase_constants.dart';
+import 'package:my_app/controllers/auth_controller.dart';
 import 'package:my_app/pages/about_screen.dart';
 import 'package:my_app/pages/authentication_screen.dart';
 import 'package:my_app/pages/listing_screen.dart';
@@ -14,6 +16,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await initalization.then((value) {
+    Get.put(AuthController());
+  });
 
   runApp(const MyApp());
 }

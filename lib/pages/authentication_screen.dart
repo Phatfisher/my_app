@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_app/constants/controllers.dart';
+import 'package:my_app/controllers/auth_controller.dart';
 import 'package:my_app/models/flutterfire.dart';
 import 'package:my_app/pages/home_landing_page.dart';
 
@@ -11,8 +13,8 @@ class Authentication extends StatefulWidget {
 }
 
 class _AuthenticationState extends State<Authentication> {
-  TextEditingController _emailField = TextEditingController();
-  TextEditingController _passwordField = TextEditingController();
+  // TextEditingController _emailField = TextEditingController();
+  // TextEditingController _passwordField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class _AuthenticationState extends State<Authentication> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           TextFormField(
-            controller: _emailField,
+            controller: authController.email,
             decoration: const InputDecoration(
               hintText: "something@email.com",
               labelText: "Email",
@@ -36,7 +38,7 @@ class _AuthenticationState extends State<Authentication> {
             ),
           ),
           TextFormField(
-            controller: _passwordField,
+            controller: authController.password,
             obscureText: true,
             decoration: const InputDecoration(
               hintText: "password",
@@ -54,18 +56,20 @@ class _AuthenticationState extends State<Authentication> {
             height: 45,
             child: MaterialButton(
               onPressed: () async {
-                bool shouldNavigate =
-                    await register(_emailField.text, _passwordField.text);
+                // bool shouldNavigate =
+                //     await register(_emailField.text, _passwordField.text);
 
-                if (shouldNavigate) {
-                  Get.to(Home());
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Home(),
-                  //   ),
-                  // );
-                }
+                // if (shouldNavigate) {
+                //   Get.to(Home());
+                //   // Navigator.push(
+                //   //   context,
+                //   //   MaterialPageRoute(
+                //   //     builder: (context) => Home(),
+                //   //   ),
+                //   // );
+                // }
+
+                authController.register();
               },
               child: const Text("Register"),
             ),
@@ -79,18 +83,21 @@ class _AuthenticationState extends State<Authentication> {
             height: 45,
             child: MaterialButton(
               onPressed: () async {
-                bool shouldNavigate =
-                    await signIn(_emailField.text, _passwordField.text);
+                // bool shouldNavigate =
+                //     await signIn(_emailField.text, _passwordField.text);
 
-                if (shouldNavigate) {
-                  Get.to(Home());
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Home(),
-                  //   ),
-                  // );
-                }
+                // if (shouldNavigate) {
+                //   Get.to(Home());
+                //   // Navigator.push(
+                //   //   context,
+                //   //   MaterialPageRoute(
+                //   //     builder: (context) => Home(),
+                //   //   ),
+                //   // );
+                // }
+
+                authController.signIn();
+                //Get.to(Home());
               },
               child: const Text("Login"),
             ),
